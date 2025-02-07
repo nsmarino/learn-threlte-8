@@ -2,12 +2,15 @@
     import Terrain from "./Terrain.svelte"
     import fragmentShader from '../shaders/fragment.glsl?raw'
     import vertexShader from '../shaders/vertex.glsl?raw'
-    import { OrbitControls } from '@threlte/extras'
-    import { OrthographicCamera, Vector3 } from 'three'
-    import { T } from '@threlte/core'
+    import * as THREE from 'three'
+    import torusFragShader from '../shaders/torus-frag.glsl?raw'
+    import torusVertShader from '../shaders/torus-vert.glsl?raw'
+    import { ShaderMaterial, Vector3 } from 'three'
+    import { T, useTask } from '@threlte/core'
     import { Tween } from 'svelte/motion'
     import { interactivity } from '@threlte/extras'
     import { quadOut } from 'svelte/easing'
+    import { ThreeMFLoader } from "three/examples/jsm/Addons";
 
     // Interactivity and shader variables
     interactivity()
@@ -27,11 +30,16 @@
           pulseTimer.set(1, { duration: 2000 })
         })
     }
+
+    let rotation = 0
+    useTask((delta) => {
+      rotation+=delta
+    })
 </script>
 
   <T.PerspectiveCamera
     makeDefault
-    position={[0,50,0]}
+    position={[0,40,0]}
     fov={15}
     oncreate={(ref) => {
       ref.lookAt(0, 0, 0)
@@ -40,10 +48,6 @@
 
   </T.PerspectiveCamera>
 
-
-    <T.DirectionalLight
-        position={[0, 10, 10]}
-        castShadow></T.DirectionalLight>
   <Terrain clickHandler={updatePulse}>
     <T.ShaderMaterial
     {fragmentShader}
@@ -60,5 +64,18 @@
     uniforms.pulsePosition.value={pulsePosition}
   />
   </Terrain>
+
+  <!-- Torus shape -->
+    <!-- <T.Mesh
+        position={[0, 10, 0]}
+        scale={[1, 1, 1]}
+        rotation.x={rotation}
+        castShadow>
+        <T.TorusGeometry args={[4, .2, 16, 100]} />
+        <T.ShaderMaterial
+        
+            fragmentShader={torusFragShader}
+        />
+    </T.Mesh> -->
   
   

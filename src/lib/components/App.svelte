@@ -3,6 +3,7 @@
   import Scene from './Scene.svelte'
   import ShaderScene from './ShaderScene.svelte';
   import ShaderFlexScene from './ShaderFlexScene.svelte';
+  import PhysicsScene from './PhysicsScene.svelte';
 
   let currentScene = $state('ShaderScene');
 </script>
@@ -22,13 +23,17 @@
     {#if currentScene === 'ShaderFlexScene'}
       <ShaderFlexScene />
     {/if}
+    {#if currentScene === 'PhysicsScene'}
+      <PhysicsScene />
+    {/if}
   </Canvas>
 </section>
 
 <nav class="absolute bottom-0 w-full flex justify-around bg-gray-800 p-4">
-  <button onclick={() => currentScene ='ShaderScene'} class="text-white">ShaderScene</button>
-  <button onclick={() => currentScene = 'Scene'} class="text-white">Scene</button>
-  <button onclick={() => currentScene = 'ShaderFlexScene'} class="text-white">ShaderFlexScene</button>
+  <button onclick={() => currentScene ='ShaderScene'} class="text-white">Shader</button>
+  <button onclick={() => currentScene = 'Scene'} class="text-white">GLTF Animation</button>
+  <button onclick={() => currentScene = 'ShaderFlexScene'} class="text-white">3D Flexbox</button>
+  <button onclick={() => currentScene = 'PhysicsScene'} class="text-white">Physics</button>
 </nav>
 
 <style>

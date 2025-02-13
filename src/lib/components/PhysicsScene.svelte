@@ -45,7 +45,6 @@
         color="white"
     />
 </T.Mesh>
-<Cube/>
 
 <!-- Foreground -->
 <!-- <T.Mesh 

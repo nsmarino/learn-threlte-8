@@ -2,7 +2,6 @@
     import { T, useTask } from '@threlte/core'
     import { Flex, Box } from '@threlte/flex'
 
-    console.log("llife goes on")
     let width=0,height=0
 
     let rotation = 0
@@ -28,7 +27,7 @@
     alignItems="Center"
     justifyContent="SpaceBetween"
   >
-  {#each { length: 2 } as _,i}
+  {#each { length: 3 } as _,i}
     <Box 
         width={width/3} 
         height={height/3}
@@ -37,6 +36,7 @@
         >
         <T.Mesh 
             renderOrder={1}
+            rotation.y={rotation}
         >
             <T.BoxGeometry args={[width/8,width/8,width/8]} />
             <T.MeshBasicMaterial color="hotpink" />

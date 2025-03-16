@@ -8,10 +8,6 @@
   let currentScene = $state('ShaderScene');
 </script>
 
-<section class="absolute z-20 flex justify-center w-full h-screen items-center pointer-events-none">
-    <h1 class="text-[200px] text-white" style="font-family:Arial, Helvetica, sans-serif;">ZERO</h1>
-</section>
-
 <section class="w-full h-screen">
   <Canvas>
     {#if currentScene === 'ShaderScene'}

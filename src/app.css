@@ -1,3 +1,321 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
-@import 'tailwindcss/utilities'
+@import 'tailwindcss/utilities';
+
+/* ------------------------------------------------------------------ */
+/*      VARIABLES
+
+        - Global variables used across the site
+        - Colors, breakpoints, easings, global sizes etc
+/* ------------------------------------------------------------------ */
+
+@font-face {
+    font-family: "GT America Mono";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/fonts/GT-America-Mono-Regular-Trial.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Neue Montreal";
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+    src: url("/fonts/PPNeueMontreal-Regular.woff2") format("woff2");
+}
+
+/* ----- FONTS ----- */
+body {
+--headline: "Neue Montreal", Helvetica, Arial, sans-serif;
+--headline-alt: "GT America Mono", Helvetica, Arial, sans-serif;
+--body: "Neue Montreal", Helvetica, Arial, sans-serif;
+--body-alt: "Neue Montreal", Helvetica, Arial, sans-serif;
+background: black;
+color: white;
+}
+
+ /**
+ * Typography
+ *
+ */
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5 {
+	font-family: var(--headline);
+	letter-spacing: -0.03em;
+	line-height: 1;
+}
+
+h6,
+.h6 {
+	font-family: var(--headline-alt);
+}
+
+h1,
+.h1 {
+	font-size: 60px;
+	font-weight: 400;
+	letter-spacing: -3px;
+	line-height: 0.95;
+
+	@media (min-width: 768px) {
+		font-size: 90px;
+	}
+
+	@media (min-width: 768px){
+		font-size: 102px;
+	}
+
+	@media (min-width: 1200px){
+		font-size: 145px;
+	}
+}
+
+h2,
+.h2 {
+	font-size: 60px;
+	font-weight: 400;
+	letter-spacing: -3px;
+	line-height: 0.95;
+
+	@media (min-width: 768px){
+		font-size: 90;
+	}
+
+	@media (min-width: 1200px){
+		font-size: 120px;
+	}
+}
+
+h3,
+.h3 {
+	font-size: 60px;
+	font-weight: 400;
+
+	@media (min-width: 768px){
+		font-size: 60px;
+	}
+
+	@media (min-width: 1200px){
+		font-size: 90px;
+	}
+}
+
+h4,
+.h4 {
+	font-size: 42px;
+	font-weight: 400;
+	letter-spacing: 0.5px;
+
+	@media (min-width: 1200px){
+		font-size: 60px;
+	}
+}
+
+h5,
+.h5 {
+	font-size: 26px;
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: -1px;
+
+
+	@media (min-width: 768px){
+		font-size: 36px;
+	}
+
+	@media (min-width: 1200px){
+		font-size: 39px;
+	}
+}
+
+h6,
+.h6 {
+	font-size: 16px;
+	font-weight: 400;
+}
+
+p, li {
+	font-size: 16px;
+	line-height: 1.4;
+
+	@media (min-width: 768px){
+		font-size: 18px;
+	}
+
+	@media (min-width: 1200px){
+		font-size: 20px;
+	}
+
+	a {
+		text-decoration: underline;
+	}
+
+	&.sm, &.secondary {
+		line-height: 1;
+		font-size: 14px;
+
+		@media (min-width: 1200px){
+			font-size: 16px;
+		}
+
+	}
+
+	&.md, &.card {
+		font-size: 30px;
+		line-height: 1;
+
+		@media (min-width: 768px){
+			font-size: 30px;
+		}
+
+		@media (min-width: 1200px){
+			font-size: 30px;
+		}
+
+	}
+
+	&.lg, &.editorial  {
+		font-size: 20px;
+		line-height: 1;
+
+		@media (min-width: 768px){
+			font-size: 30px;
+		}
+
+		@media (min-width: 1200px){
+			font-size: 40px;
+		}
+	}
+
+	&.xl, &.quote {
+		font-size: 20px;
+		line-height: 1;
+
+		@media (min-width: 768px){
+			font-size: 34px;
+		}
+
+		@media (min-width: 1200px){
+			font-size: 48px;
+		}
+	}
+}
+
+.subhead {
+	font-family: var(--headline-alt);
+	font-size: 20px;
+	letter-spacing: 0.5px;
+	line-height: 1;
+
+	@media (min-width: 1200px){
+		font-size: 20px;
+	}
+
+}
+
+.eyebrow {
+	font-family: (--headline-alt);
+	font-size: 14px;
+	line-height: 1;
+	letter-spacing: 0.5px;
+
+	@media (min-width: 1200px){
+		font-size: 14px;
+	}
+}
+
+.richtext {
+
+	> * {
+		margin-bottom: var(--content-gap, 20px);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&:empty {
+			display: none;
+		}
+	}
+
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	.h3
+	h4,
+	.h4,
+	h5,
+	.h5,
+	h6,
+	.h6 {
+
+		a {
+			text-decoration: underline;
+		}
+	}
+
+	p {
+
+		a {
+
+		}
+	}
+
+	ol,
+	ul {
+		list-style-type: revert;
+		padding-left: 30px;
+
+		li {
+
+			a {
+
+			}
+		}
+	}
+
+	img {
+
+	}
+
+	sup {
+		font-size: 65%;
+		font-weight: 400;
+		left: -0.25em;
+		top: -0.65em;
+		vertical-align: baseline;
+	}
+
+	sub {
+		bottom: -0.45em;
+		font-size: 65%;
+		font-weight: 400;
+		left: -0.25em;
+		vertical-align: baseline;
+	}
+
+	blockquote {
+
+	}
+
+	small {
+		font-size: 13;
+	}
+
+	/** Prismic Image Block */
+	.block-img {
+		display: flex;
+		justify-content: center;
+	}
+}

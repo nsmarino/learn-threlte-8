@@ -3,11 +3,7 @@
     import { interactivity } from '@threlte/extras'
     import { World } from '@threlte/rapier'
     import { AutoColliders } from '@threlte/rapier'
-
-
-    interactivity() // invoke to add interaction event listeners
-
-
+    import Emitter from './ParticleSystem/Emitter.svelte'
 
 </script>
 <World>
@@ -24,7 +20,7 @@
         castShadow
     />
 
-
+    <Emitter />
     <!-- Ground! -->
     <T.Group position={[0, -0.5, 0]}>
         <AutoColliders shape={'cuboid'}>

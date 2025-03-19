@@ -1,7 +1,7 @@
 <script>
     import Terrain from "./Terrain.svelte"
-    import fragmentShader from '../shaders/fragment.glsl?raw'
-    import vertexShader from '../shaders/vertex.glsl?raw'
+    import fragmentShader from '../shaders/background/fragment.glsl?raw'
+    import vertexShader from '../shaders/background/vertex.glsl?raw'
     import * as THREE from 'three'
     import { ShaderMaterial, Vector3 } from 'three'
     import { T, useTask } from '@threlte/core'

@@ -1,5 +1,10 @@
-<script>
- let { heading, description } = $props();
+<script lang="ts">
+
+interface Props {
+    heading: string;
+    description: string;
+}
+ let { heading, description }: Props = $props();
 </script>
 
 <section class="p-4 absolute left-4 bottom-4 z-20 w-[600px] h-fit bg-black border border-white">

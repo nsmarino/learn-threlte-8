@@ -1,0 +1,20 @@
+<script>
+ let { heading, description } = $props();
+</script>
+
+<section class="px-8 py-16 absolute z-20 w-1/3 h-screen overflow-scroll bg-black">
+    <h1 class="h5 uppercase mb-8">{heading}</h1>  
+    <p class="mb-4">{description}</p>
+    <p><a href="/" class="w-10 h-10 block rounded-full bg-white flex items-center justify-center back-btn"><span>🔙</span></a></p>
+</section>
+
+<style>
+.back-btn:hover span {
+    transform: scale(1.25);
+    transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+.back-btn span {
+    transform: scale(1);
+    transition: transform 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+</style>

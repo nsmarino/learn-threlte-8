@@ -19,9 +19,14 @@
 		"vite": "^6.0.0"
 	},
 	"dependencies": {
+		"@dimforge/rapier3d-compat": "^0.15.0",
+		"@theatre/core": "^0.7.2",
+		"@theatre/studio": "^0.7.2",
 		"@threlte/core": "^8.0.1",
 		"@threlte/extras": "^9.0.1",
 		"@threlte/flex": "^2.0.0",
+		"@threlte/rapier": "^3.1.0",
+		"@threlte/theatre": "^3.0.0",
 		"three": "^0.172.0"
 	}
 }

@@ -1,62 +1,19 @@
 <script>
-    import App from "$lib/components/App.svelte";
+    import content from '$lib/content';
 </script>
 <section class="p-8 h-screen overflow-scroll">
     <div class="h-[120px] bg-black fixed top-0 z-20 mb-8 flex items-center">
         <h1 class="uppercase text-white">Arboretum&nbsp;<a href="https://www.zero.nyc" target="_blank" class="zero"></a></h1>
     </div>
     <ul class="text-white flex flex-col gap-12 my-[120px]">
-        <li>
-            <a href="/shaders" class="polaroid">
-                <span class="emoji">⛰</span>
-                <span class="label">Fullscreen Shader Background</span>
-            </a>
-        </li>
-        <li>
-            <a href="/physics" class="polaroid">
-                <span class="emoji">🪤</span>
-                <span class="label">Physics</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="/flex" class="polaroid">
-                <span class="emoji">📦</span>
-                <span class="label">3D Flexbox</span>
-            </a>
-        </li>
-        <li>
-            <a href="/imports" class="polaroid">
-                <span class="emoji">🚚</span>
-                <span class="label">Importing from Blender</span>
-            </a>
-        </li>
-        <li>
-            <a href="/shaders" class="polaroid">
-                <span class="emoji">⛰</span>
-                <span class="label">Fullscreen Shader Background</span>
-            </a>
-        </li>
-        <li>
-            <a href="/shaders" class="polaroid">
-                <span class="emoji">🪤</span>
-                <span class="label">Physics</span>
-            </a>
-        </li>
-
-        <li>
-            <a href="/shaders" class="polaroid">
-                <span class="emoji">📦</span>
-                <span class="label">3D Flexbox</span>
-            </a>
-        </li>
-        <li>
-            <a href="/shaders" class="polaroid">
-                <span class="emoji">🚚</span>
-                <span class="label">Importing from Blender</span>
-            </a>
-        </li>
-
+        {#each content as demo}
+            <li>
+                <a href={demo.slug} class="polaroid">
+                    <span class="emoji">{demo.emoji}</span>
+                    <span class="label">{demo.label}</span>
+                </a>
+            </li>
+        {/each}
     </ul>
 </section>
 

@@ -3,8 +3,6 @@
     import fragmentShader from '../shaders/fragment.glsl?raw'
     import vertexShader from '../shaders/vertex.glsl?raw'
     import * as THREE from 'three'
-    import torusFragShader from '../shaders/torus-frag.glsl?raw'
-    import torusVertShader from '../shaders/torus-vert.glsl?raw'
     import { ShaderMaterial, Vector3 } from 'three'
     import { T, useTask } from '@threlte/core'
     import { Tween } from 'svelte/motion'

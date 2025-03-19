@@ -1,15 +1,17 @@
 <script lang="ts">
 
-interface Props {
-    heading: string;
-    description: string;
-}
- let { heading, description }: Props = $props();
+    interface Props {
+        heading: string;
+        description: string;
+    }
+
+    let { heading, description }: Props = $props();
+    
 </script>
 
 <section class="p-4 absolute left-4 bottom-4 z-20 w-[600px] h-fit bg-black border border-white">
-    <h1 class="h5 uppercase mb-8">{heading}</h1>  
-    <p class="mb-4">{description}</p>
+    <h1 class="h5 uppercase mb-2">{heading}</h1>  
+    <p class="mb-8">{description}</p>
     <p><a href="/" class="w-10 h-10 block rounded-full bg-white flex items-center justify-center back-btn"><span>🔙</span></a></p>
 </section>
 

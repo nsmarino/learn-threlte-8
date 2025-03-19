@@ -1,6 +1,6 @@
 export default [
     {
-        label: "Fullscreen Shader",
+        label: "Shader Backgrounds",
         emoji: "🌌",
         slug: "shaders",
     },
@@ -28,5 +28,5 @@ export default [
         label: "3D Flexbox",
         emoji: "📦",
         slug: "3d-flexbox",
-    }
+    },
 ]

@@ -1,8 +1,9 @@
 <script>
-    import { T, useTask } from '@threlte/core'
-    import { interactivity } from '@threlte/extras'
+    import { T, useTask, } from '@threlte/core'
+    import { interactivity, OrbitControls } from '@threlte/extras'
     import { Spring } from 'svelte/motion'
-    import Cube from './GLTF/Cube.svelte';
+    import House from './GLTF/House.svelte';
+    
 
     interactivity() // invoke to add interaction event listeners
 
@@ -21,46 +22,17 @@
 
 <T.PerspectiveCamera
   makeDefault
-  position={[10, 10, 10]}
+  position={[20, 20, 20]}
   oncreate={(ref) => {
     ref.lookAt(0, 1, 0)
-  }}
+  }}>
+  <OrbitControls autoRotate={true} />
+</T.PerspectiveCamera>
+
+<T.AmbientLight 
+
+    intensity={2}
 />
 
-<T.DirectionalLight 
-    position={[0, 10, 10]}
-    castShadow
-/>
-
-
-<!-- Background -->
-<T.Mesh
-  rotation.x={-Math.PI / 2}
-  receiveShadow
->
-    <T.CircleGeometry
-        args={[4,40]}
-    />
-    <T.MeshStandardMaterial
-        color="white"
-    />
-</T.Mesh>
-<Cube/>
-
-<!-- Foreground -->
-<!-- <T.Mesh 
-    position.y={1}
-    rotation.y={rotation}
-    scale={scale.current}
-    onpointerenter={()=>{
-        scale.target=1.5
-    }}
-    onpointerleave={() => {
-        scale.target = 1
-    }}
-    castShadow
->
-    <T.BoxGeometry args={[1, 2, 1]} />
-    <T.MeshStandardMaterial color="hotpink" />
-</T.Mesh> -->
+<House />
 

@@ -6,7 +6,7 @@
   </script>
   <Sidebar
       heading="3D Flexbox"
-      description="Aligning 3D objects in a responsiveflexbox-like manner."
+      description="Aligning 3D objects in a responsive flexbox-like manner."
   >
   </Sidebar>
   

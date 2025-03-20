@@ -1,4 +1,6 @@
 <script>
+// KEEP AS EXAMPLE OF PLAYING GLTF ANIMATION
+
     import { useGltf, useGltfAnimations } from '@threlte/extras'
     import { T } from '@threlte/core'
 

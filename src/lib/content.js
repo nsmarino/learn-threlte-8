@@ -29,4 +29,9 @@ export default [
         emoji: "📦",
         slug: "3d-flexbox",
     },
+    {
+        label: "SVG Generation With D3",
+        emoji: "🌿",
+        slug: "tree",
+    },
 ]

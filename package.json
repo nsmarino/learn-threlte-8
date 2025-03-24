@@ -29,6 +29,7 @@
 		"@threlte/rapier": "^3.1.0",
 		"@threlte/theatre": "^3.0.0",
 		"@types/three": "^0.174.0",
+		"d3": "^7.9.0",
 		"three": "^0.172.0"
 	}
 }
